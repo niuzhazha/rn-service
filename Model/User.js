@@ -32,10 +32,12 @@ const User = sequelize.define('user', {
 })
 
 User.sync(); //创建表
+
+// 查找用户名为admin的用户信息，如果没有找到，则添加一个名为admin的用户，默认密码为6个0
 User
   .findOrCreate({
   	where: {
-  		username: 'beige'
+  		username: 'admin'
   	}, 
   	defaults: {
   		password: '000000',
